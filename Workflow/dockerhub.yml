@@ -28,7 +28,10 @@ jobs:
     - name: Build e Push no Docker Hub
       run: |
         cd ./SiteContagem
-        docker build . --file Dockerfile --tag ${{ env.NOME_COMPLETO_IMAGEM }}:latest
-        docker tag ${{ env.NOME_COMPLETO_IMAGEM }}:latest ${{ env.NOME_COMPLETO_IMAGEM }}:$GITHUB_RUN_NUMBER
-        docker push ${{ env.NOME_COMPLETO_IMAGEM }}
+        # docker build . --file Dockerfile --tag ${{ env.NOME_COMPLETO_IMAGEM }}:latest
+        # docker tag ${{ env.NOME_COMPLETO_IMAGEM }}:latest ${{ env.NOME_COMPLETO_IMAGEM }}:$GITHUB_RUN_NUMBER
+        # docker push ${{ env.NOME_COMPLETO_IMAGEM }}
+          docker build . --file Dockerfile --tag $NOME_IMAGEM:latest
+          docker tag $NOME_IMAGEM:latest $NOME_IMAGEM:$GITHUB_RUN_NUMBER
+          docker push $NOME_IMAGEM
 #######################################################################################################################
