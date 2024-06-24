@@ -10,7 +10,7 @@ jobs:
   build:
     env:
       NOME_IMAGEM: testesitecontagem
-      NOME_COMPLETO_IMAGEM: ${{ secrets.DOCKER_USERNAME }}/$NOME_IMAGEM
+      NOME_COMPLETO_IMAGEM: ${{ secrets.DOCKER_USERNAME }}/testesitecontagem
 
     runs-on: ubuntu-latest
 
@@ -29,4 +29,3 @@ jobs:
         docker build . --file Dockerfile --tag $NOME_COMPLETO_IMAGEM:latest
         docker tag $NOME_COMPLETO_IMAGEM:latest $NOME_COMPLETO_IMAGEM:$GITHUB_RUN_NUMBER
         docker push $NOME_COMPLETO_IMAGEM
-
