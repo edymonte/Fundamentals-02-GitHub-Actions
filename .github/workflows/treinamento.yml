@@ -50,6 +50,6 @@ jobs:
       shell: bash
       run: |
         cd ./SiteContagem
-        docker build . --file Dockerfile --tag ${{ env.NOME_COMPLETO_IMAGEM }}:latest
-        docker tag ${{ env.NOME_COMPLETO_IMAGEM }}:latest ${{ env.NOME_COMPLETO_IMAGEM }}:$GITHUB_RUN_NUMBER
+        docker build . --file Dockerfile --tag ${{ env.NOME_IMAGEM }}:latest
+        docker tag edymonte/env.NOME_IMAGEM:latest ${{ env.NOME_COMPLETO_IMAGEM }}:$GITHUB_RUN_NUMBER
         docker push ${{ env.NOME_COMPLETO_IMAGEM }}
